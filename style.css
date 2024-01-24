@@ -23,6 +23,24 @@ h1 {
   margin: 0 auto;
 }
 
+.keyboard {
+  margin: 12px auto;
+  width: 452px;
+  display: flex;
+  gap: 8px;
+}
+
+.keyboard button {
+  flex-basis: 38px;
+  background-color: #d3d6da;
+  padding: 12px 8px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
