@@ -164,10 +164,10 @@ button {
 
 @media (prefers-color-scheme: dark) {
   button {
-    background-color: #818384;
+    background-color: #535555;
   }
   .wrong {
-    background-color: #3a3a3c;
+    background-color: #2d2d2f;
   }
   .almost {
     background-color: #b59f3b;
