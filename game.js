@@ -24,7 +24,7 @@ function getEmptySpot() {
 
 function getUserWord() {
   let word = "";
-  for (let i = 0; i < ROW_LENGTH; i ++) {
+  for (let i = 0; i < ROW_LENGTH; i++) {
     word += rows[currentRow].children[i].innerText;
   }
   return word;
@@ -57,8 +57,7 @@ function markGuess(correctWord) {
     if (map[letter.innerText] > 0) {
       letter.classList.add("almost");
       map[letter.innerText]--;
-    }
-    else letter.classList.add("wrong");
+    } else letter.classList.add("wrong");
   }
 }
 
@@ -68,7 +67,7 @@ async function makeGuess(correctWord) {
   setLoading(true);
   const res = await fetch("https://words.dev-apis.com/validate-word", {
     method: "POST",
-    body: JSON.stringify({ word: word })
+    body: JSON.stringify({ word: word }),
   });
   const resObj = await res.json();
   const validWord = resObj.validWord;
@@ -84,15 +83,14 @@ async function makeGuess(correctWord) {
     statusLine.innerText = "Invalid word";
     return;
   }
-  
+
   markGuess(correctWord);
   statusLine.innerText = "Keep guessing";
 
   if (word === correctWord) {
     endGame("win");
     return;
-  }
-  else if (currentRow === 5) {
+  } else if (currentRow === 5) {
     endGame("lose", correctWord);
     return;
   }
@@ -103,7 +101,7 @@ async function makeGuess(correctWord) {
 
 function endGame(state, word) {
   if (state === "win") {
-    statusLine.innerText = "You win!"
+    statusLine.innerText = "You win!";
     statusLine.classList.add("win");
     for (let i = 0; i < ROW_LENGTH; i++) {
       rows[currentRow].children[i].classList.add("winner");
@@ -127,26 +125,55 @@ async function init() {
   setLoading(false);
   isLoading = false;
 
-  document.addEventListener("keydown", async function(event) {
+  // physical/device keyboard interaction
+  document.addEventListener("keydown", async function (event) {
     if (gameIsOver || isLoading) return;
-  
+
     if (isLetter(event.key)) {
       const emptySpot = getEmptySpot();
       if (!rowIsFull) emptySpot.innerText = event.key.toUpperCase();
     }
-  
+
     if (event.key === "Enter" && rowIsFull) {
       await makeGuess(wordOfDay);
     }
-  
+
     if (event.key === "Backspace" && !rowIsEmpty) {
       currentIndex--;
       rows[currentRow].children[currentIndex].innerText = "";
     }
-  
+
     if (currentIndex === 0) rowIsEmpty = true;
     else rowIsEmpty = false;
-  
+
+    if (currentIndex === ROW_LENGTH) rowIsFull = true;
+    else rowIsFull = false;
+  });
+
+  // on screen keyboard interaction
+  const keyboard = document.querySelector("#keyboard");
+  keyboard.addEventListener("click", async function (event) {
+    const letter = event.target.value;
+
+    if (gameIsOver || isLoading) return;
+
+    if (isLetter(letter)) {
+      const emptySpot = getEmptySpot();
+      if (!rowIsFull) emptySpot.innerText = letter.toUpperCase();
+    }
+
+    if (letter === "enter" && rowIsFull) {
+      await makeGuess(wordOfDay);
+    }
+
+    if (letter === "delete" && !rowIsEmpty) {
+      currentIndex--;
+      rows[currentRow].children[currentIndex].innerText = "";
+    }
+
+    if (currentIndex === 0) rowIsEmpty = true;
+    else rowIsEmpty = false;
+
     if (currentIndex === ROW_LENGTH) rowIsFull = true;
     else rowIsFull = false;
   });
