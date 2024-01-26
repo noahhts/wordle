@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -74,16 +78,19 @@ button {
 .wrong {
   background-color: #787c7e;
   color: white;
+  border: none;
 }
 
 .almost {
   background-color: #c9b458;
   color: white;
+  border: none;
 }
 
 .correct {
   background-color: #6aaa64;
   color: white;
+  border: none;
 }
 
 .hide {
@@ -153,4 +160,22 @@ button {
   animation: shake 0.75s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    background-color: #818384;
+  }
+  .wrong {
+    background-color: #3a3a3c;
+  }
+  .almost {
+    background-color: #b59f3b;
+  }
+  .correct {
+    background-color: #538d4e;
+  }
+  .letter {
+    border-color: #3a3a3c;
+  }
 }
