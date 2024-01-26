@@ -1,4 +1,5 @@
 const rows = document.querySelectorAll(".row");
+const keyButtons = document.querySelectorAll("#keyboard button");
 let currentRow = 0;
 let currentIndex = 0; // the first empty space in the current row
 let rowIsFull = false;
@@ -43,10 +44,14 @@ function makeMap(array) {
 function markGuess(correctWord) {
   const guessParts = rows[currentRow].children;
   const map = makeMap(correctWord.split(""));
+  const correctLetters = [];
+  const almostLetters = [];
+  const wrongLetters = [];
 
   for (let i = 0; i < ROW_LENGTH; i++) {
     const letter = guessParts[i];
     if (letter.innerText === correctWord[i]) {
+      correctLetters.push(letter.innerText);
       letter.classList.add("correct");
       map[letter.innerText]--;
     }
@@ -55,9 +60,23 @@ function markGuess(correctWord) {
   for (let i = 0; i < ROW_LENGTH; i++) {
     const letter = guessParts[i];
     if (map[letter.innerText] > 0) {
+      almostLetters.push(letter.innerText);
       letter.classList.add("almost");
       map[letter.innerText]--;
-    } else letter.classList.add("wrong");
+    } else {
+      wrongLetters.push(letter.innerText);
+      letter.classList.add("wrong");
+    }
+  }
+
+  // mark onscreen keyboard
+  for (let i = 0; i < keyButtons.length; i++) {
+    if (correctLetters.includes(keyButtons[i].value))
+      keyButtons[i].classList.add("correct");
+    if (almostLetters.includes(keyButtons[i].value))
+      keyButtons[i].classList.add("almost");
+    if (wrongLetters.includes(keyButtons[i].value))
+      keyButtons[i].classList.add("wrong");
   }
 }
 

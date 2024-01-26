@@ -36,7 +36,8 @@ h1 {
   justify-content: center;
 }
 
-.keyrow button {
+/* could do .keyrow button, but this is more specific than .correct, so overwrites background-color */
+button {
   flex-basis: 42px;
   background-color: #d3d6da;
   padding: 12px 8px;
