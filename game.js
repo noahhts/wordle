@@ -151,7 +151,10 @@ async function init() {
 
     if (isLetter(event.key)) {
       const emptySpot = getEmptySpot();
-      if (!rowIsFull) emptySpot.innerText = event.key.toUpperCase();
+      if (!rowIsFull) {
+        emptySpot.innerText = event.key.toUpperCase();
+        emptySpot.classList.add("occupied");
+      }
     }
 
     if (event.key === "Enter" && rowIsFull) {
@@ -161,6 +164,7 @@ async function init() {
     if (event.key === "Backspace" && !rowIsEmpty) {
       currentIndex--;
       rows[currentRow].children[currentIndex].innerText = "";
+      rows[currentRow].children[currentIndex].classList.remove("occupied");
     }
 
     if (currentIndex === 0) rowIsEmpty = true;
@@ -182,7 +186,10 @@ async function init() {
 
     if (isLetter(letter)) {
       const emptySpot = getEmptySpot();
-      if (!rowIsFull) emptySpot.innerText = letter.toUpperCase();
+      if (!rowIsFull) {
+        emptySpot.innerText = letter.toUpperCase();
+        emptySpot.classList.add("occupied");
+      }
     }
 
     if (letter === "enter" && rowIsFull) {
@@ -192,6 +199,7 @@ async function init() {
     if (letter === "delete" && !rowIsEmpty) {
       currentIndex--;
       rows[currentRow].children[currentIndex].innerText = "";
+      rows[currentRow].children[currentIndex].classList.remove("occupied");
     }
 
     if (currentIndex === 0) rowIsEmpty = true;

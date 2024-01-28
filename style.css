@@ -77,6 +77,10 @@ button {
   font-weight: bold;
 }
 
+.occupied {
+  border-color: #878a8c;
+}
+
 .wrong {
   background-color: #787c7e;
   color: white;
@@ -180,5 +184,8 @@ button {
   }
   .letter {
     border-color: #3a3a3c;
+  }
+  .occupied {
+    border-color: #565758;
   }
 }
