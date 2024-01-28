@@ -208,7 +208,11 @@ button {
   body {
     height: 100%;
   }
-  .status {
+  h1 {
+    margin: 1rem 0;
+  }
+  .status,
+  .loading {
     margin: 3rem 0;
   }
   .body {
