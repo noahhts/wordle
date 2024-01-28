@@ -209,6 +209,9 @@ button {
     height: 100%;
   }
   .status {
-    margin: 2rem;
+    margin: 3rem 0;
+  }
+  .body {
+    margin: 3rem 0;
   }
 }
