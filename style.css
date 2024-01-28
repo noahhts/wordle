@@ -30,6 +30,7 @@ h1 {
 
 #keyboard {
   margin: 12px auto;
+  touch-action: manipulation;
 }
 
 .keyrow {
@@ -51,7 +52,6 @@ button {
   font-weight: bold;
   font-size: 1.25rem;
   cursor: pointer;
-  touch-action: manipulation;
 }
 
 #enter,
