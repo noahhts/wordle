@@ -215,7 +215,18 @@ button {
   .loading {
     margin: 3rem 0;
   }
-  .body {
+  .board {
     margin: 3rem 0;
+  }
+}
+
+@media (height < 2000px) and (hover: none) {
+  #keyboard {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+  body {
+    height: 100%;
   }
 }
