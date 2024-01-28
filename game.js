@@ -143,6 +143,7 @@ async function init() {
   const wordOfDay = resObj.word.toUpperCase();
   setLoading(false);
   isLoading = false;
+  // gameIsOver = localStorage.getItem("gameOver");
 
   // physical/device keyboard interaction
   document.addEventListener("keydown", async function (event) {
@@ -167,6 +168,9 @@ async function init() {
 
     if (currentIndex === ROW_LENGTH) rowIsFull = true;
     else rowIsFull = false;
+
+    // localStorage.setItem("gameOver", String(gameIsOver));
+    // console.log(localStorage.getItem("gameOver"));
   });
 
   // on screen keyboard interaction
