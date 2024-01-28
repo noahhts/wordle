@@ -220,7 +220,7 @@ button {
   }
 }
 
-@media (height < 2000px) and (hover: none) {
+@media (height < 1800px) and (hover: none) {
   #keyboard {
     bottom: 0;
     position: absolute;
@@ -228,13 +228,16 @@ button {
   }
   body {
     height: 100%;
+    /* scale: 0.8; */
   }
   h1 {
     margin: 0;
+    font-size: 24px;
   }
   .status,
   .loading {
     margin: 0;
+    padding: 0.5rem;
   }
   .board {
     margin: 0 auto;
