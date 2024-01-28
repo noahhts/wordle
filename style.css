@@ -77,8 +77,15 @@ button {
   font-weight: bold;
 }
 
+@keyframes pop {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
 .occupied {
   border-color: #878a8c;
+  animation: pop 0.07s ease;
 }
 
 .wrong {
