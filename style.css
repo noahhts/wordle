@@ -196,7 +196,8 @@ button {
 }
 
 @media (hover: none) {
-  h1 {
-    font-size: 24px;
+  #keyboard {
+    bottom: 0;
+    position: absolute;
   }
 }
