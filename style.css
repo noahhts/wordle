@@ -201,8 +201,7 @@ button {
 @media (hover: none) {
   #keyboard {
     bottom: 0;
-    left: inherit;
-    right: inherit;
     position: absolute;
+    width: 100%;
   }
 }
