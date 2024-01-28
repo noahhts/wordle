@@ -216,7 +216,7 @@ button {
     margin: 3rem 0;
   }
   .board {
-    margin: 3rem 0;
+    margin: 3rem auto;
   }
 }
 
@@ -228,5 +228,15 @@ button {
   }
   body {
     height: 100%;
+  }
+  h1 {
+    margin: 0;
+  }
+  .status,
+  .loading {
+    margin: 0;
+  }
+  .board {
+    margin: 0 auto;
   }
 }
