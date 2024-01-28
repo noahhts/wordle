@@ -93,12 +93,10 @@ async function makeGuess(correctWord) {
   isLoading = false;
   setLoading(false);
   if (!validWord) {
-    for (let i = 0; i < ROW_LENGTH; i++) {
-      rows[currentRow].children[i].classList.add("invalid");
-      setTimeout(function () {
-        rows[currentRow].children[i].classList.remove("invalid");
-      }, 1000);
-    }
+    rows[currentRow].classList.add("invalid");
+    setTimeout(() => {
+      rows[currentRow].classList.remove("invalid");
+    }, 1000);
     statusLine.innerText = "Invalid word";
     return;
   }
