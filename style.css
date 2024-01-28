@@ -206,6 +206,6 @@ button {
     width: 100%;
   }
   body {
-    overflow: hidden;
+    height: 100%;
   }
 }
