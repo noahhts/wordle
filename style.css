@@ -251,8 +251,8 @@ button {
     width: 300px;
   }
   .letter {
-    width: 52px;
-    height: 52px;
+    width: 54px;
+    height: 54px;
   }
 }
 
@@ -284,9 +284,9 @@ button {
 
 @media (width < 500px) and (hover: none) {
   button {
-    font-size: 1rem;
+    font-size: 1.1rem;
     flex-basis: 30px;
-    padding: 0;
+    padding: 10px 0;
   }
   #enter,
   #delete {
