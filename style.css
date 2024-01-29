@@ -269,6 +269,7 @@ button {
   display: none;
   text-align: center;
   margin: auto;
+  margin-top: 2rem;
 }
 
 @media (height < 585px) and (hover: none) {
@@ -285,6 +286,7 @@ button {
   button {
     font-size: 1rem;
     flex-basis: 30px;
+    padding: 0;
   }
   #enter,
   #delete {
