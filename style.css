@@ -26,14 +26,19 @@ header {
 }
 h1 {
   margin: 0;
+  padding: 0 0.5rem;
   font-size: 2rem;
 }
 div.hidden {
+  margin: 0;
+  padding: 0;
   margin-right: auto;
   visibility: hidden;
   width: 100px;
 }
 div.links {
+  margin: 0;
+  padding: 0;
   margin-left: auto;
   width: 100px;
 }
@@ -262,7 +267,6 @@ button {
   }
   h1 {
     font-size: 1.5rem;
-    padding: 0;
   }
   .status,
   .loading {
@@ -287,14 +291,14 @@ button {
     padding: 0.25rem 0.5rem;
     margin-bottom: 0.25rem;
   }
+  #keyboard {
+    margin: 4px auto;
+  }
 }
 
 @media (height < 615px) and (hover: none) {
   button {
     font-size: 1rem;
-  }
-  #keyboard {
-    margin: 4px auto;
   }
 }
 
