@@ -248,11 +248,11 @@ button {
 
 @media (height < 650px) and (hover: none) {
   .board {
-    width: 290px;
+    width: 300px;
   }
   .letter {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -265,8 +265,20 @@ button {
   }
 }
 
-@media (height < 585px) {
-  /* flip screen to fit content page OR just make it smaller, mobile devices still probably fit here portrait mode */
+.rotate {
+  display: none;
+  text-align: center;
+  margin: auto;
+}
+
+@media (height < 585px) and (hover: none) {
+  /* flip screen to fit content page */
+  .rotate {
+    display: block;
+  }
+  main {
+    display: none;
+  }
 }
 
 @media (width < 500px) and (hover: none) {
@@ -276,9 +288,9 @@ button {
   }
   #enter,
   #delete {
-    font-size: 0.5rem;
-    padding: 8px 0;
-    flex-basis: 50px;
+    font-size: 0.6rem;
+    padding: 0;
+    flex-basis: 48px;
   }
   #keyboard {
     margin: 4px auto;

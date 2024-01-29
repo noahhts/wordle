@@ -17,89 +17,95 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Word Masters</h1>
-    <div class="loading">🌀</div>
-    <div class="status hide">Get 6 tries to guess a 5-letter word.</div>
-    <div class="board">
-      <div class="row">
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-      </div>
-      <div class="row">
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-      </div>
-      <div class="row">
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-      </div>
-      <div class="row">
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-      </div>
-      <div class="row">
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-      </div>
-      <div class="row">
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-      </div>
+    <div class="rotate">
+      <p><strong>Please rotate your device to portrait mode.</strong></p>
+      <p>We can't fit everything on your screen :(</p>
     </div>
-    <div id="keyboard">
-      <div class="keyrow">
-        <button value="Q">Q</button>
-        <button value="W">W</button>
-        <button value="E">E</button>
-        <button value="R">R</button>
-        <button value="T">T</button>
-        <button value="Y">Y</button>
-        <button value="U">U</button>
-        <button value="I">I</button>
-        <button value="O">O</button>
-        <button value="P">P</button>
+    <main>
+      <h1>Word Masters</h1>
+      <div class="loading">🌀</div>
+      <div class="status hide">Get 6 tries to guess a 5-letter word.</div>
+      <div class="board">
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
       </div>
-      <div class="keyrow">
-        <button value="A">A</button>
-        <button value="S">S</button>
-        <button value="D">D</button>
-        <button value="F">F</button>
-        <button value="G">G</button>
-        <button value="H">H</button>
-        <button value="J">J</button>
-        <button value="K">K</button>
-        <button value="L">L</button>
+      <div id="keyboard">
+        <div class="keyrow">
+          <button value="Q">Q</button>
+          <button value="W">W</button>
+          <button value="E">E</button>
+          <button value="R">R</button>
+          <button value="T">T</button>
+          <button value="Y">Y</button>
+          <button value="U">U</button>
+          <button value="I">I</button>
+          <button value="O">O</button>
+          <button value="P">P</button>
+        </div>
+        <div class="keyrow">
+          <button value="A">A</button>
+          <button value="S">S</button>
+          <button value="D">D</button>
+          <button value="F">F</button>
+          <button value="G">G</button>
+          <button value="H">H</button>
+          <button value="J">J</button>
+          <button value="K">K</button>
+          <button value="L">L</button>
+        </div>
+        <div class="keyrow">
+          <button id="enter" value="enter">ENTER</button>
+          <button value="Z">Z</button>
+          <button value="X">X</button>
+          <button value="C">C</button>
+          <button value="V">V</button>
+          <button value="B">B</button>
+          <button value="N">N</button>
+          <button value="M">M</button>
+          <button id="delete" value="delete">DELETE</button>
+        </div>
       </div>
-      <div class="keyrow">
-        <button id="enter" value="enter">ENTER</button>
-        <button value="Z">Z</button>
-        <button value="X">X</button>
-        <button value="C">C</button>
-        <button value="V">V</button>
-        <button value="B">B</button>
-        <button value="N">N</button>
-        <button value="M">M</button>
-        <button id="delete" value="delete">DELETE</button>
-      </div>
-    </div>
+    </main>
     <script src="game.js"></script>
   </body>
 </html>
