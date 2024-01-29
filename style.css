@@ -269,7 +269,7 @@ button {
   display: none;
   text-align: center;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 @media (height < 585px) and (hover: none) {
@@ -285,7 +285,10 @@ button {
 @media (width < 500px) and (hover: none) {
   button {
     flex-basis: 30px;
-    padding: 12px 0;
+    padding: 10px 2px;
+  }
+  .keyrow {
+    gap: 4px;
   }
   #enter,
   #delete {
