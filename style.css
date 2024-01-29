@@ -261,7 +261,7 @@ button {
     height: 100%;
   }
   h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
     padding: 0;
   }
   .status,
@@ -284,7 +284,7 @@ button {
     height: 54px;
   }
   header {
-    padding: 0.25rem;
+    padding: 0.25rem 0.5rem;
     margin-bottom: 0.25rem;
   }
 }
