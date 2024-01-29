@@ -247,11 +247,40 @@ button {
 }
 
 @media (height < 650px) and (hover: none) {
-  /* flip screen to fit content page OR just make it smaller, mobile devices still probably fit here portrait mode */
-  body {
-    scale: 0.9;
+  .board {
+    width: 290px;
+  }
+  .letter {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (height < 615px) and (hover: none) {
+  button {
+    font-size: 1rem;
   }
   #keyboard {
-    scale: 0.8;
+    margin: 4px auto;
+  }
+}
+
+@media (height < 585px) {
+  /* flip screen to fit content page OR just make it smaller, mobile devices still probably fit here portrait mode */
+}
+
+@media (width < 500px) and (hover: none) {
+  button {
+    font-size: 1rem;
+    flex-basis: 30px;
+  }
+  #enter,
+  #delete {
+    font-size: 0.5rem;
+    padding: 8px 0;
+    flex-basis: 50px;
+  }
+  #keyboard {
+    margin: 4px auto;
   }
 }
