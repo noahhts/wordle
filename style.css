@@ -247,5 +247,11 @@ button {
 }
 
 @media (height < 650px) and (hover: none) {
-  /* flip screen to fit content page */
+  /* flip screen to fit content page OR just make it smaller, mobile devices still probably fit here portrait mode */
+  body {
+    scale: 0.9;
+  }
+  #keyboard {
+    scale: 0.8;
+  }
 }
