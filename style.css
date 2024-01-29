@@ -41,9 +41,7 @@ a {
   text-decoration: none;
   font-size: 1.5rem;
   margin: 0 0.5rem;
-}
-a:visited {
-  color: inherit;
+  color: #f8f8f8;
 }
 @media (width < 600px) {
   div.hidden {
@@ -265,7 +263,6 @@ button {
     height: 100%;
   }
   h1 {
-    margin: 0;
     font-size: 24px;
     padding: 0.5rem;
   }
@@ -287,6 +284,9 @@ button {
   .letter {
     width: 54px;
     height: 54px;
+  }
+  header {
+    padding: 0.5rem;
   }
 }
 
