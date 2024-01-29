@@ -241,9 +241,6 @@ button {
   body {
     height: 100%;
   }
-  h1 {
-    margin: 1rem 0;
-  }
   .status,
   .loading {
     margin: 3rem 0;
@@ -287,8 +284,8 @@ button {
     height: 54px;
   }
   header {
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    padding: 0.25rem;
+    margin-bottom: 0.25rem;
   }
 }
 
