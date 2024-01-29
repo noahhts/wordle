@@ -284,11 +284,12 @@ button {
 
 @media (width < 500px) and (hover: none) {
   button {
-    flex-basis: 30px;
-    padding: 10px 2px;
+    flex-basis: 32px;
+    padding: 12px 2px;
   }
   .keyrow {
-    gap: 4px;
+    gap: 5px;
+    margin: 5px 0;
   }
   #enter,
   #delete {
