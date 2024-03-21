@@ -9,6 +9,7 @@ let isLoading = true;
 const loader = document.querySelector(".loading");
 const statusLine = document.querySelector(".status");
 const ROW_LENGTH = 5; // or word or answer length
+const NUM_GUESSES = 6;
 
 function isLetter(letter) {
   return /^[a-zA-Z]$/.test(letter);
@@ -104,6 +105,8 @@ async function makeGuess(correctWord) {
   markGuess(correctWord);
   statusLine.innerText = "Keep guessing";
 
+  localStorage.setItem(`guess${currentRow + 1}`, word);
+
   if (word === correctWord) {
     endGame("win");
     return;
@@ -139,9 +142,27 @@ async function init() {
   const response = await fetch("https://words.dev-apis.com/word-of-the-day");
   const resObj = await response.json();
   const wordOfDay = resObj.word.toUpperCase();
+  if (localStorage.getItem("word") !== wordOfDay) {
+    for (let i = 0; i < NUM_GUESSES; i++) {
+      localStorage.removeItem(`guess${i + 1}`);
+    }
+  } else {
+    // populate UI with already made guesses from local storage
+    for (let i = 0; i < NUM_GUESSES; i++) {
+      if (localStorage.getItem(`guess${i + 1}`)) {
+        currentRow = i;
+        for (let j = 0; j < ROW_LENGTH; j++) {
+          const letter = localStorage.getItem(`guess${i + 1}`)[j];
+          rows[currentRow].children[j].innerText = letter;
+        }
+        await makeGuess(wordOfDay);
+      }
+    }
+  }
+  localStorage.setItem("word", wordOfDay);
+
   setLoading(false);
   isLoading = false;
-  // gameIsOver = localStorage.getItem("gameOver");
 
   // physical/device keyboard interaction
   document.addEventListener("keydown", async function (event) {
@@ -170,9 +191,6 @@ async function init() {
 
     if (currentIndex === ROW_LENGTH) rowIsFull = true;
     else rowIsFull = false;
-
-    // localStorage.setItem("gameOver", String(gameIsOver));
-    // console.log(localStorage.getItem("gameOver"));
   });
 
   // on screen keyboard interaction
