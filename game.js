@@ -143,9 +143,7 @@ async function init() {
   const resObj = await response.json();
   const wordOfDay = resObj.word.toUpperCase();
   if (localStorage.getItem("word") !== wordOfDay) {
-    for (let i = 0; i < NUM_GUESSES; i++) {
-      localStorage.removeItem(`guess${i + 1}`);
-    }
+    localStorage.clear();
   } else {
     // populate UI with already made guesses from local storage
     for (let i = 0; i < NUM_GUESSES; i++) {
