@@ -155,7 +155,19 @@ async function init() {
           const letter = localStorage.getItem(`guess${i + 1}`)[j];
           rows[currentRow].children[j].innerText = letter;
         }
-        await makeGuess(wordOfDay);
+        isLoading = false;
+        setLoading(false);
+        markGuess(wordOfDay);
+        statusLine.innerText = "Keep guessing";
+        if (localStorage.getItem(`guess${i + 1}`) === wordOfDay) {
+          endGame("win");
+          return;
+        } else if (currentRow === 5) {
+          endGame("lose", wordOfDay);
+          return;
+        }
+        currentRow++;
+        currentIndex = 0;
       }
     }
   }
