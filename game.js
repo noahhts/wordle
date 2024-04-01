@@ -1,9 +1,3 @@
-import posthog from "posthog-js";
-
-posthog.init("phc_qCGRH55sqlC1mvpjBsdAfNqQ5gaiM0UEZHzMSU5MH9I", {
-  api_host: "https://app.posthog.com",
-});
-
 const rows = document.querySelectorAll(".row");
 const keyButtons = document.querySelectorAll("#keyboard button");
 let currentRow = 0;
